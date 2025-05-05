@@ -1,0 +1,14 @@
+<div class="container">
+<h1>AirBnB</h1>
+<h2> View all our flats </h2>
+
+<% @flats.each do |flat| %>
+  <div class="card">
+    <h3><%= link_to flat["name"], flat_path(flat["id"]) %> </h3>
+    <img src="<%= flat["imageUrl"] %>" alt="photo">
+    <p><%= flat["price"] %> <%= flat["priceCurrency"] %></p>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "back to home", root_path %>
